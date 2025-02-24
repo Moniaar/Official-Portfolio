@@ -1,0 +1,28 @@
+body {
+    background-color: #22014d;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.name_banner {
+    font-size: 48px;
+    color: #fefbfb;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding-top: 80px;
+}
+
+.name_banner2 {
+    font-size: 36px;
+    color: #fefbfb;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.job {
+    font-size: 20px;
+    color: #cda3ff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    padding-top: 0px; /* Reduced padding to bring it closer */
+}
