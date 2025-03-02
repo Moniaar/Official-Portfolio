@@ -1,28 +1,136 @@
 body {
-    background-color: #22014d;
+    background-color: #f3dec8;
     color: #fff;
     font-family: 'Roboto', sans-serif;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.homemade-apple-regular {
+    font-family: "Homemade Apple", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.caveat.job {
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+header img {
+    max-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .name_banner {
     font-size: 48px;
-    color: #fefbfb;
+    color: #1e1d1d;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: "Homemade Apple", serif;
+    font-weight: 400;
+    font-style: normal;
     padding-top: 80px;
 }
 
 .name_banner2 {
     font-size: 36px;
-    color: #fefbfb;
+    color: #1e1d1d;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: "Homemade Apple", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .job {
-    font-size: 20px;
-    color: #cda3ff;
+    font-size: 28px;
+    color: #403a34;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     padding-top: 0px; /* Reduced padding to bring it closer */
+}
+
+.banner {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about {
+    position: absolute;
+    top: 62%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    color: #1e1d1d;
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px;
+}
+
+section.projects {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+section.projects img {
+    max-width: 100%;
+    justify-content: center;
+}
+
+div.projects {
+    color: #1e1d1d;
+    position: absolute;
+    text-align: center;
+    top: 104%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px;
+
+}
+
+div.education {
+    color: #1e1d1d;
+    position: absolute;
+    text-align: center;
+    top: 190%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px;
+}
+
+div.contact {
+    position: absolute;
+    text-align: center;
+    color: #1e1d1d;
+    top: 290%;
+    left: 82%;
+    transform: translate(-50%, -50%);
+    font-family: "Caveat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px;
 }
