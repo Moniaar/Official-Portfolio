@@ -11,18 +11,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
-    <!-- The styles sheet for my CSS-->
+    <!-- Toggle icon is here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=toggle_off" />    <!-- The styles sheet for my CSS-->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <img src="design7.png" alt="design">
+        <span class="material-symbols-outlined">
+            toggle_off
+        </span>
         <div class="banner">
             <h1 class="name_banner">Omnia Ahmed</h1>
             <h1 class="name_banner2">Abd Elgadir</h1>
             <p class="job">Front-End Engineer</p>
-         </div>
+        </div>
          <p class="about">
             Passionate student of life, from electronic engineering specialzing in computer and networks
             to web development and UI/UX design.
@@ -59,10 +63,9 @@
     <div class="contact">
         <div class="container">
         <h2>Contact Me</h2>
-        <p>
-            <a href="mailto:">
-            </a>
-        </p>
+        <button class="contact_button">Send</button>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
         </div>
     </div>
 </footer>
