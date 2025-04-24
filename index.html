@@ -10,9 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Homemade+Apple&family=Caveat:wght@500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=toggle_off" />
     <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #FDFBF7;
@@ -28,14 +26,12 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
-        .image-placeholder {
-            position: relative;
+        .project-image {
             width: 100%;
             height: 100%;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
         }
         .image-overlay {
             position: absolute;
@@ -58,6 +54,9 @@
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: 10;
+        }
+        .image-container.has-image .upload-btn {
+            display: none;
         }
         .image-container:hover .upload-btn {
             opacity: 1;
@@ -109,10 +108,10 @@
             text-align: center;
             color: var(--light-text);
         }
-        .projects, .education, .contact {
+        .projects, .education, .skills, .contact {
             padding: 2rem 0;
         }
-        .projects h2, .education h2, .contact h2 {
+        .projects h2, .education h2, .skills h2, .contact h2 {
             font-family: 'Pacifico', cursive;
             color: var(--secondary-color);
             text-align: center;
@@ -137,18 +136,61 @@
             border: 1px solid #E6D5AC;
             border-radius: 4px;
         }
+        .education-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .skills-image-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            aspect-ratio: 1 / 1;
+        }
+        .skills-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .skills-text-overlay {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            right: 10%;
+            bottom: 10%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            text-align: left;
+            white-space: pre-wrap;
+            overflow: auto;
+            z-index: 5;
+        }
+        .skills-text-overlay textarea {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            color: white;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            resize: none;
+            outline: none;
+        }
     </style>
 </head>
 <body>
     <div class="min-h-screen flex flex-col">
         <header class="py-6 px-4 md:px-8 bg-white shadow-sm">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-2xl font-['Pacifico'] text-secondary">Portfolio & Gallery</h1>
+                <h1 class="text-2xl font-['Pacifico'] text-secondary">Moniaar</h1>
                 <nav>
                     <ul class="flex space-x-6">
                         <li><a href="#home" class="text-gray-700 hover:text-secondary transition-colors">Home</a></li>
-                        <li><a href="#gallery" class="text-gray-700 hover:text-secondary transition-colors">Gallery</a></li>
                         <li><a href="#projects" class="text-gray-700 hover:text-secondary transition-colors">Projects</a></li>
+                        <li><a href="#skills" class="text-gray-700 hover:text-secondary transition-colors">Skills</a></li>
                         <li><a href="#education" class="text-gray-700 hover:text-secondary transition-colors">Education</a></li>
                         <li><a href="#contact" class="text-gray-700 hover:text-secondary transition-colors">Contact</a></li>
                     </ul>
@@ -169,101 +211,106 @@
                 </p>
             </section>
 
-            <section id="gallery" class="py-12">
-                <div class="max-w-5xl mx-auto">
-                    <h2 class="text-3xl font-medium text-gray-800 mb-2 text-center">Project Gallery</h2>
-                    <p class="text-gray-600 mb-10 text-center max-w-2xl mx-auto">Upload your favorite images and add captions to create a beautiful gallery. The wooden frames add a warm, natural touch to your photographs.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Image Container 1 -->
-                        <div class="flex flex-col">
-                            <div class="image-container wood-bg aspect-square rounded relative">
-                                <div class="image-placeholder" id="preview-1">
-                                    <div class="w-16 h-16 flex items-center justify-center text-secondary">
-                                        <i class="ri-image-line ri-3x"></i>
-                                    </div>
-                                </div>
-                                <div class="image-overlay rounded"></div>
-                                <label for="file-1" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
-                                    <span class="flex items-center">
-                                        <span class="w-5 h-5 flex items-center justify-center mr-2">
-                                            <i class="ri-upload-line"></i>
-                                        </span>
-                                        Upload Image
+            <section id="projects" class="projects py-12">
+                <h2>Projects</h2>
+                <p class="text-center text-gray-600 mb-8">Explore my latest work in web development and UI/UX design.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="flex flex-col">
+                        <div class="image-container wood-bg aspect-square rounded relative" id="container-1">
+                            <img id="project-img-1" class="project-image" src="" alt="Project 1">
+                            <div class="image-overlay rounded"></div>
+                            <label for="file-1" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                <span class="flex items-center">
+                                    <span class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-upload-line"></i>
                                     </span>
-                                </label>
-                                <input type="file" id="file-1" class="file-input" accept="image/*">
-                            </div>
-                            <div class="mt-4 px-2">
-                                <input type="text" class="caption-input w-full px-2 py-2 text-center text-gray-700" placeholder="Add a caption here..." aria-label="Image caption">
-                                <p class="text-xs text-gray-500 mt-2 text-center">Describe your image or add details about when and where it was taken.</p>
-                            </div>
+                                    Upload Image
+                                </span>
+                            </label>
+                            <input type="file" id="file-1" class="file-input" accept="image/*">
                         </div>
-
-                        <!-- Image Container 2 -->
-                        <div class="flex flex-col">
-                            <div class="image-container wood-bg aspect-square rounded relative">
-                                <div class="image-placeholder" id="preview-2">
-                                    <div class="w-16 h-16 flex items-center justify-center text-secondary">
-                                        <i class="ri-image-line ri-3x"></i>
-                                    </div>
-                                </div>
-                                <div class="image-overlay rounded"></div>
-                                <label for="file-2" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
-                                    <span class="flex items-center">
-                                        <span class="w-5 h-5 flex items-center justify-center mr-2">
-                                            <i class="ri-upload-line"></i>
-                                        </span>
-                                        Upload Image
-                                    </span>
-                                </label>
-                                <input type="file" id="file-2" class="file-input" accept="image/*">
-                            </div>
-                            <div class="mt-4 px-2">
-                                <input type="text" class="caption-input w-full px-2 py-2 text-center text-gray-700" placeholder="Add a caption here..." aria-label="Image caption">
-                                <p class="text-xs text-gray-500 mt-2 text-center">Describe your image or add details about when and where it was taken.</p>
-                            </div>
+                        <div class="mt-4 px-2">
+                            <input type="text" id="caption-1" class="caption-input w-full px-2 py-2 text-center text-gray-700" placeholder="Project title..." aria-label="Project title">
+                            <textarea id="desc-1" class="caption-input w-full px-2 py-2 mt-2 text-center text-gray-700" placeholder="Project description..." aria-label="Project description"></textarea>
                         </div>
+                    </div>
 
-                        <!-- Image Container 3 -->
-                        <div class="flex flex-col">
-                            <div class="image-container wood-bg aspect-square rounded relative">
-                                <div class="image-placeholder" id="preview-3">
-                                    <div class="w-16 h-16 flex items-center justify-center text-secondary">
-                                        <i class="ri-image-line ri-3x"></i>
-                                    </div>
-                                </div>
-                                <div class="image-overlay rounded"></div>
-                                <label for="file-3" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
-                                    <span class="flex items-center">
-                                        <span class="w-5 h-5 flex items-center justify-center mr-2">
-                                            <i class="ri-upload-line"></i>
-                                        </span>
-                                        Upload Image
+                    <!-- Project 2 -->
+                    <div class="flex flex-col">
+                        <div class="image-container wood-bg aspect-square rounded relative" id="container-2">
+                            <img id="project-img-2" class="project-image" src="" alt="Project 2">
+                            <div class="image-overlay rounded"></div>
+                            <label for="file-2" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                <span class="flex items-center">
+                                    <span class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-upload-line"></i>
                                     </span>
-                                </label>
-                                <input type="file" id="file-3" class="file-input" accept="image/*">
-                            </div>
-                            <div class="mt-4 px-2">
-                                <input type="text" class="caption-input w-full px-2 py-2 text-center text-gray-700" placeholder="Add a caption here..." aria-label="Image caption">
-                                <p class="text-xs text-gray-500 mt-2 text-center">Describe your image or add details about when and where it was taken.</p>
-                            </div>
+                                    Upload Image
+                                </span>
+                            </label>
+                            <input type="file" id="file-2" class="file-input" accept="image/*">
+                        </div>
+                        <div class="mt-4 px-2">
+                            <input type="text" id="caption-2" class="caption-input w-full px-2 py-2 text-center text-gray-700" placeholder="Project title..." aria-label="Project title">
+                            <textarea id="desc-2" class="caption-input w-full px-2 py-2 mt-2 text-center text-gray-700" placeholder="Project description..." aria-label="Project description"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="flex flex-col">
+                        <div class="image-container wood-bg aspect-square rounded relative" id="container-3">
+                            <img id="project-img-3" class="project-image" src="" alt="Project 3">
+                            <div class="image-overlay rounded"></div>
+                            <label for="file-3" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                <span class="flex items-center">
+                                    <span class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-upload-line"></i>
+                                    </span>
+                                    Upload Image
+                                </span>
+                            </label>
+                            <input type="file" id="file-3" class="file-input" accept="image/*">
+                        </div>
+                        <div class="mt-4 px-2">
+                            <input type="text" id="caption-3" class="caption-input w-full px-2 py-2 text-center text-gray-700" placeholder="Project title..." aria-label="Project title">
+                            <textarea id="desc-3" class="caption-input w-full px-2 py-2 mt-2 text-center text-gray-700" placeholder="Project description..." aria-label="Project description"></textarea>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="projects" class="projects py-12">
+            <section id="skills" class="skills py-12">
                 <h2>Skills & Languages</h2>
-                <p class="text-center text-gray-600">Explore my latest work in web development and UI/UX design.</p>
+                <p class="text-center text-gray-600 mb-8">Technical expertise and programming languages</p>
+                <div class="skills-image-container image-container" id="skills-container">
+                    <img id="skills-img" class="skills-image" src="" alt="Skills Background">
+                    <div class="image-overlay rounded"></div>
+                    <label for="skills-file" class="upload-btn bg-white text-secondary px-4 py-2 rounded-button cursor-pointer shadow-md hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        <span class="flex items-center">
+                            <span class="w-5 h-5 flex items-center justify-center mr-2">
+                                <i class="ri-upload-line"></i>
+                            </span>
+                        </span>
+                    </label>
+                    <input type="file" id="skills-file" class="file-input" accept="image/*">
+                    <div class="skills-text-overlay" id="skills-text">
+                        <textarea id="skills-textarea" placeholder="Enter your skills and languages here...">Web Development: HTML, CSS, JavaScript, React, Tailwind CSS
+UI/UX Design: Figma, Adobe XD, User Research
+Other: Git, Node.js, REST APIs</textarea>
+                    </div>
+                </div>
             </section>
 
             <section id="education" class="education py-12">
                 <h2>Education</h2>
-                <p class="text-center text-gray-600">
-                    SUST, Khartoum, Sudan<br>
-                    Bachelor of Science in Computer Science
-                </p>
+                <div class="max-w-2xl mx-auto">
+                    <div class="education-card">
+                        <h3 class="text-lg font-semibold text-secondary">Bachelor of Science in Computer Science</h3>
+                        <p class="text-gray-600 mt-2">Sudan University of Science and Technology (SUST)</p>
+                        <p class="text-gray-500 text-sm mt-1">Khartoum, Sudan | 2018 - 2023</p>
+                    </div>
+                </div>
             </section>
 
             <section id="contact" class="contact py-12">
@@ -286,30 +333,139 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            function handleFileSelect(fileInput, previewId) {
+            // Load saved projects from localStorage
+            function loadProjects() {
+                for (let i = 1; i <= 3; i++) {
+                    const projectData = localStorage.getItem(`project-${i}`);
+                    if (projectData) {
+                        const { image, caption, description } = JSON.parse(projectData);
+                        const imgElement = document.getElementById(`project-img-${i}`);
+                        const captionElement = document.getElementById(`caption-${i}`);
+                        const descElement = document.getElementById(`desc-${i}`);
+                        const containerElement = document.getElementById(`container-${i}`);
+                        
+                        if (image) {
+                            imgElement.src = image;
+                            imgElement.style.display = 'block';
+                            containerElement.classList.add('has-image');
+                        }
+                        if (caption) captionElement.value = caption;
+                        if (description) descElement.value = description;
+                    }
+                }
+            }
+
+            // Save project data to localStorage
+            function saveProject(index, imageData, caption, description) {
+                const projectData = {
+                    image: imageData,
+                    caption: caption,
+                    description: description
+                };
+                localStorage.setItem(`project-${index}`, JSON.stringify(projectData));
+            }
+
+            // Handle file selection and preview for projects
+            function handleFileSelect(fileInput, previewId, captionId, descId, index, containerId) {
                 fileInput.addEventListener('change', function(e) {
                     const file = e.target.files[0];
                     if (file) {
                         const reader = new FileReader();
                         reader.onload = function(e) {
-                            const previewContainer = document.getElementById(previewId);
-                            previewContainer.innerHTML = '';
+                            const imgElement = document.getElementById(previewId);
+                            const containerElement = document.getElementById(containerId);
+                            imgElement.src = e.target.result;
+                            imgElement.style.display = 'block';
+                            containerElement.classList.add('has-image');
                             
-                            const img = document.createElement('img');
-                            img.src = e.target.result;
-                            img.className = 'w-full h-full object-cover rounded object-top';
-                            img.alt = 'Uploaded image';
-                            
-                            previewContainer.appendChild(img);
+                            const caption = document.getElementById(captionId).value;
+                            const description = document.getElementById(descId).value;
+                            saveProject(index, e.target.result, caption, description);
                         };
                         reader.readAsDataURL(file);
                     }
                 });
+
+                const captionInput = document.getElementById(captionId);
+                const descInput = document.getElementById(descId);
+                
+                captionInput.addEventListener('input', function() {
+                    const imgSrc = document.getElementById(previewId).src;
+                    saveProject(index, imgSrc, captionInput.value, descInput.value);
+                });
+                
+                descInput.addEventListener('input', function() {
+                    const imgSrc = document.getElementById(previewId).src;
+                    saveProject(index, imgSrc, captionInput.value, descInput.value);
+                });
             }
-            
-            handleFileSelect(document.getElementById('file-1'), 'preview-1');
-            handleFileSelect(document.getElementById('file-2'), 'preview-2');
-            handleFileSelect(document.getElementById('file-3'), 'preview-3');
+
+            // Initialize project handlers
+            handleFileSelect(
+                document.getElementById('file-1'),
+                'project-img-1',
+                'caption-1',
+                'desc-1',
+                1,
+                'container-1'
+            );
+            handleFileSelect(
+                document.getElementById('file-2'),
+                'project-img-2',
+                'caption-2',
+                'desc-2',
+                2,
+                'container-2'
+            );
+            handleFileSelect(
+                document.getElementById('file-3'),
+                'project-img-3',
+                'caption-3',
+                'desc-3',
+                3,
+                'container-3'
+            );
+
+            // Load saved projects on page load
+            loadProjects();
+
+            // Skills section image and text handling
+            const skillsFileInput = document.getElementById('skills-file');
+            const skillsImg = document.getElementById('skills-img');
+            const skillsContainer = document.getElementById('skills-container');
+            const skillsTextarea = document.getElementById('skills-textarea');
+
+            // Load saved skills image and text
+            const savedSkillsImage = localStorage.getItem('skills-image');
+            const savedSkillsText = localStorage.getItem('skills-text');
+            if (savedSkillsImage) {
+                skillsImg.src = savedSkillsImage;
+                skillsImg.style.display = 'block';
+                skillsContainer.classList.add('has-image');
+            }
+            if (savedSkillsText) {
+                skillsTextarea.value = savedSkillsText;
+            }
+
+            // Handle skills image upload
+            skillsFileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        skillsImg.src = e.target.result;
+                        skillsImg.style.display = 'block';
+                        skillsContainer.classList.add('has-image');
+                        localStorage.setItem('skills-image', e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Save skills text on input
+            skillsTextarea.addEventListener('input', function() {
+                localStorage.setItem('skills-text', skillsTextarea.value);
+            });
         });
     </script>
 </body>
