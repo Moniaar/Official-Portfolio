@@ -265,7 +265,7 @@ body {
     padding-right: 50px;
     padding-bottom: 0px;
     padding-left: 50px;
-    background-color: #fdfcea;
+    background-color: #f7e4d0bd;
   }
   
   .arch_contact_us_duplicate .responsive-container-block.container {
@@ -380,13 +380,13 @@ body {
     margin-right: 0px;
     margin-bottom: 60px;
     margin-left: 0px;
-    background-color: #b0ab4d;
+    background-color: #ab88628f;
   }
   
   .arch_contact_us_duplicate .form-wrapper {
     border-bottom-width: 4px;
     border-bottom-style: solid;
-    border-bottom-color: #f3f2cf;
+    border-bottom-color:#e1c5a88f;
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 60px;
@@ -400,11 +400,11 @@ body {
   }
   
   .arch_contact_us_duplicate .input-element {
-    background-color: #f3f2cf;
+    background-color: #f5dabd8f;
   }
   
   .arch_contact_us_duplicate .icon-block.social-icon {
-    fill: #b0ab4d;
+    fill: #ab88628f;
   }
   
   @media (max-width: 1024px) {
