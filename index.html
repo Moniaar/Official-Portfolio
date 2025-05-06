@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>tailwind.config={theme:{extend:{colors:{primary:'#E6D5AC',secondary:'#8B6B4C'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Homemade+Apple&family=Caveat:wght@500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -287,20 +288,28 @@
                 </div>
             </section>
 
-            <section id="skills" class="skills py-12" style="padding-bottom: 7rem;">
-                <h2>Skills & Languages</h2>
-                <p class="text-center text-gray-600 mb-8">Technical expertise and programming languages</p>
-                <div class="skills-image-container image-container wood-bg" id="skills-container">
-                    <img id="skills-img" class="skills-image" src="./paper_notes.png" alt="Skills Image">
-                    <div class="image-overlay rounded"></div>
-                    <input type="file" id="skills-file" class="file-input" accept="image/*">
-                    <div class="skills-text-overlay" id="skills-text">
-                        <textarea id="skills-textarea" placeholder="Enter your skills and languages here...">Web Development: HTML, CSS, JavaScript, React, Tailwind CSS
-            UI/UX Design: Figma, Adobe XD, User Research
-            Other: Git, Node.js, REST APIs</textarea>
-                    </div>
+            <section id="skills" class="skills py-12">
+                <h2>Tech Stack</h2>
+                <p class="text-center text-gray-600 mb-8">My technical expertise and tools</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Tech Stack Icons -->
+                    <i class="devicon-html5-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-css3-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-javascript-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-react-original text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-tailwindcss-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-figma-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-adobexd-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-git-plain text-5xl" style="color: #8B6B4C;"></i>
+                    <i class="devicon-nodejs-plain text-5xl" style="color: #8B6B4C;"></i>
                 </div>
+            </section>
                 <style>
+                    .skills {
+                        padding: 2rem 0;
+                        background-color: #FDFBF7; /* Match your site background */
+                    }
+
                     .skills h2 {
                         font-family: 'Homemade Apple', cursive;
                         color: var(--secondary-color, #8B6B4C);
@@ -308,42 +317,20 @@
                         margin-bottom: 1rem;
                         font-size: 2rem;
                     }
-                    .skills-image-container {
-                        position: relative;
-                        max-width: 500px;
-                        margin: 0 auto;
-                        aspect-ratio: 1 / 1;
+
+                    .skills p {
+                        font-family: 'Poppins', sans-serif;
+                        text-align: center;
+                        color: var(--light-text, #7D6E5D);
+                        margin-bottom: 2rem;
                     }
-                    .skills-image {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-radius: 8px;
+
+                    .skills .devicon {
+                        transition: transform 0.3s ease;
                     }
-                    .skills-text-overlay {
-                        position: absolute;
-                        top: 15%;
-                        left: 10%;
-                        right: 10%;
-                        bottom: 10%;
-                        color: white;
-                        font-family: 'Caveat', cursive;
-                        font-size: 1.25rem;
-                        text-align: left;
-                        white-space: pre-wrap;
-                        word-wrap: break-word;
-                        z-index: 5;
-                    }
-                    .skills-text-overlay textarea {
-                        width: 100%;
-                        height: 100%;
-                        background: transparent;
-                        border: none;
-                        color: #4c4040;
-                        font-family: 'Caveat', cursive;
-                        font-size: 1.25rem;
-                        resize: none;
-                        outline: none;
+
+                    .skills .devicon:hover {
+                        transform: scale(1.1); /* Slight hover effect */
                     }
                 </style>
 
@@ -638,43 +625,6 @@
             // Load saved projects on page load
             loadProjects();
 
-            // Skills section image and text handling
-            const skillsFileInput = document.getElementById('skills-file');
-            const skillsImg = document.getElementById('skills-img');
-            const skillsContainer = document.getElementById('skills-container');
-            const skillsTextarea = document.getElementById('skills-textarea');
-
-            // Load saved skills image and text
-            const savedSkillsImage = localStorage.getItem('skills-image');
-            const savedSkillsText = localStorage.getItem('skills-text');
-            if (savedSkillsImage) {
-                skillsImg.src = savedSkillsImage;
-                skillsImg.style.display = 'block';
-                skillsContainer.classList.add('has-image');
-            }
-            if (savedSkillsText) {
-                skillsTextarea.value = savedSkillsText;
-            }
-
-            // Handle skills image upload
-            skillsFileInput.addEventListener('change', function(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        skillsImg.src = e.target.result;
-                        skillsImg.style.display = 'block';
-                        skillsContainer.classList.add('has-image');
-                        localStorage.setItem('skills-image', e.target.result);
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            // Save skills text on input
-            skillsTextarea.addEventListener('input', function() {
-                localStorage.setItem('skills-text', skillsTextarea.value);
-            });
         });
     </script>
 </body>
