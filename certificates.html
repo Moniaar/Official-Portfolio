@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moniaar Official Website</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Homemade+Apple&family=Caveat:wght@500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./contact.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=toggle_off" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FDFBF7;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(230, 213, 172, 0.05), rgba(230, 213, 172, 0.2));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .image-container:hover .image-overlay {
+            opacity: 1;
+        }
+        .upload-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        .image-container.has-image .upload-btn {
+            display: none;
+        }
+        .image-container:hover .upload-btn {
+            opacity: 1;
+        }
+        .caption-input {
+            background-color: transparent;
+            border-bottom: 1px solid #E6D5AC;
+            transition: border-color 0.3s ease;
+        }
+        .caption-input:focus {
+            border-color: #8B6B4C;
+            outline: none;
+        }
+        .file-input {
+            display: none;
+        }
+        .wood-bg {
+            background-color: #E6D5AC;
+            background-image: linear-gradient(90deg, 
+                rgba(139, 107, 76, 0.03) 1px, 
+                transparent 1px), 
+                linear-gradient(#E6D5AC, #E6D5AC);
+            background-size: 20px 20px;
+        }
+        :root {
+            --primary-color: #E6D5AC;
+            --secondary-color: #8B6B4C;
+            --text-color: #4B3621;
+            --light-text: #7D6E5D;
+        }
+        .min-h-screen {
+            min-height: 100vh;
+        }
+        .banner {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .name_banner, .name_banner2 {
+            font-family: 'Homemade Apple', cursive;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        .job {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-top: 0.5rem;
+        }
+        .about {
+            max-width: 600px;
+            margin: 1rem auto;
+            text-align: center;
+            color: var(--light-text);
+        }
+        .projects, .education, .skills, .contact {
+            padding: 2rem 0;
+        }
+        .projects h2, .education h2, .skills h2, .contact h2 {
+            font-family: 'Homemade Apple', cursive;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact_button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 1rem auto;
+        }
+        .contact input {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0.5rem auto;
+            padding: 0.5rem;
+            border: 1px solid #E6D5AC;
+            border-radius: 4px;
+        }
+        .education-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .skills-image-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            aspect-ratio: 1 / 1;
+        }
+        .skills-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .skills-text-overlay {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            right: 10%;
+            bottom: 10%;
+            color: white;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            text-align: left;
+            white-space: pre-wrap;
+            overflow: auto;
+            z-index: 5;
+        }
+        .skills-text-overlay textarea {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            color: #4c4040;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            resize: none;
+            outline: none;
+        }
+        nav {
+            font-family: 'Caveat', cursive;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 50;
+            padding: 1rem 2rem;
+            background-color: #FDFBF7;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body class="bg-primary text-secondary font-poppins">
+    <div class="min-h-screen flex flex-col">
+        <header>
+            <div class="nav-container">
+            <nav>
+                <ul style="display: flex; justify-content: space-between; width: 100%;">
+                <li><a href="./index.html" style="flex: auto; text-align: left;">Omnia Ahmed</a></li>
+                <div style="display: flex; gap: 1.5rem;">
+                    <li><a href="./ui.html">UI Designer</a></li>
+                    <li><a href="./ml_proj.html">ML</a></li>
+                    <li><a href="./certificates.html">Certificates</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </div>
+                </ul>
+            </nav>
+            </div>
+        </header>
+            <section id="projects" class="projects py-12" style="padding-top: 5rem;">
+                <h2>Certificates and Achievments</h2>
+                <p class="text-center text-gray-600 mb-8">Find out what I am truly in love learning about :)</p>
+                <section id="education" class="education py-12">
+                <h2>Education</h2>
+                <div class="max-w-2xl mx-auto">
+                    <div class="education-card">
+                        <h3 class="text-lg font-semibold text-secondary">Bachelor of Science in Computer Science</h3>
+                        <p class="text-gray-600 mt-2">Sudan University of Science and Technology (SUST)</p>
+                        <p class="text-gray-500 text-sm mt-1">Khartoum, Sudan | 2018 - 2023</p>
+                    </div>
+                    <!-- I am sorry but this line 359 is my fav line in this whole project XD -->
+                    <hr style="height:30px">
+                    <div class="education-card">
+                        <h3 class="text-lg font-semibold text-secondary">Associate of Business degree</h3>
+                        <p class="text-gray-600 mt-2">University of the People (UoP)</p>
+                        <p class="text-gray-500 text-sm mt-1">USA, Remote | 2023 - 2026</p>
+                    </div>
+                </div>
+            </section>
+            </section>
+            <style>
+                    .contact {
+                        background-color: #FDFBF7;
+                    }
+                    .contact h2 {
+                        font-family: 'Homemade Apple', cursive;
+                        color: var(--secondary-color, #8B6B4C);
+                        text-align: center;
+                        margin-bottom: 1rem;
+                        font-size: 2rem;
+                    }
+                    .text-blk.section-head {
+                        font-family: 'Caveat', cursive;
+                        color: var(--text-color, #4B3621);
+                        font-size: 1.75rem;
+                        text-align: center;
+                    }
+                    .text-blk.section-subhead {
+                        font-family: 'Poppins', sans-serif;
+                        color: var(--light-text, #7D6E5D);
+                        font-size: 1rem;
+                        text-align: center;
+                        max-width: 500px;
+                        margin: 0 auto;
+                    }
+                    .form-wrapper {
+                        max-width: 400px;
+                        margin: 0 auto;
+                    }
+                    .input-element {
+                        width: 100%;
+                        padding: 0.75rem;
+                        margin: 0.5rem 0;
+                        border: 1px solid var(--primary-color, #E6D5AC);
+                        border-radius: 4px;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1rem;
+                        background-color: #fff;
+                        transition: border-color 0.3s ease;
+                    }
+                    .input-element:focus {
+                        border-color: var(--secondary-color, #8B6B4C);
+                        outline: none;
+                    }
+                    .textinput.input-element {
+                        min-height: 100px;
+                        resize: vertical;
+                    }
+                    .button {
+                        background-color: var(--secondary-color, #8B6B4C);
+                        color: white;
+                        padding: 0.75rem 1.5rem;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        display: block;
+                        margin: 1rem auto;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 1rem;
+                        transition: background-color 0.3s ease;
+                    }
+                    .button:hover {
+                        background-color: #6F553A;
+                    }
+                    .social-media-icon-container {
+                        display: flex;
+                        justify-content: center;
+                        gap: 1rem;
+                    }
+                    .social-icon svg {
+                        fill: var(--secondary-color, #8B6B4C);
+                        transition: fill 0.3s ease;
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .social-icon:hover svg {
+                        fill: var(--primary-color, #E6D5AC);
+                    }
+                    #form-message {
+                        font-family: 'Poppins', sans-serif;
+                        color: var(--text-color, #4B3621);
+                    }
+                    #form-message.success {
+                        color: #2e7d32;
+                    }
+                    #form-message.error {
+                        color: #d32f2f;
+                    }
+                </style>
+                <script>
+                    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+                        e.preventDefault();
+                        const form = e.target;
+                        const messageDiv = document.getElementById('form-message');
+                        messageDiv.classList.remove('success', 'error', 'hidden');
+                        messageDiv.textContent = 'Sending...';
+            
+                        try {
+                            const response = await fetch(form.action, {
+                                method: 'POST',
+                                body: new FormData(form),
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            });
+            
+                            if (response.ok) {
+                                messageDiv.textContent = 'Message sent successfully!';
+                                messageDiv.classList.add('success');
+                                form.reset();
+                            } else {
+                                throw new Error('Failed to send message');
+                            }
+                        } catch (error) {
+                            messageDiv.textContent = 'Error sending message. Please try again.';
+                            messageDiv.classList.add('error');
+                        }
+                    });
+                </script>
+            </section>
+        </main>
+
+        <footer class="bg-white py-8 border-t border-gray-100">
+            <div class="container mx-auto px-4 md:px-8 text-center">
+                <p class="text-gray-600 text-sm">© 2025 Omnia Ahmed. All rights reserved.</p>
+                <p class="text-gray-500 text-xs mt-2">Thank you for taking from your valuable time to be here!</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved projects from localStorage
+            function loadProjects() {
+                for (let i = 1; i <= 3; i++) {
+                    const projectData = localStorage.getItem(`project-${i}`);
+                    if (projectData) {
+                        const { image, caption, description } = JSON.parse(projectData);
+                        const imgElement = document.getElementById(`project-img-${i}`);
+                        const captionElement = document.getElementById(`caption-${i}`);
+                        const descElement = document.getElementById(`desc-${i}`);
+                        const containerElement = document.getElementById(`container-${i}`);
+                        
+                        if (image) {
+                            imgElement.src = image;
+                            imgElement.style.display = 'block';
+                            containerElement.classList.add('has-image');
+                        }
+                        if (caption) captionElement.value = caption;
+                        if (description) descElement.value = description;
+                    }
+                }
+            }
+
+            // Save project data to localStorage
+            function saveProject(index, imageData, caption, description) {
+                const projectData = {
+                    image: imageData,
+                    caption: caption,
+                    description: description
+                };
+                localStorage.setItem(`project-${index}`, JSON.stringify(projectData));
+            }
+
+            // Handle file selection and preview for projects
+            function handleFileSelect(fileInput, previewId, captionId, descId, index, containerId) {
+                fileInput.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const imgElement = document.getElementById(previewId);
+                            const containerElement = document.getElementById(containerId);
+                            imgElement.src = e.target.result;
+                            imgElement.style.display = 'block';
+                            containerElement.classList.add('has-image');
+                            
+                            const caption = document.getElementById(captionId).value;
+                            const description = document.getElementById(descId).value;
+                            saveProject(index, e.target.result, caption, description);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                const captionInput = document.getElementById(captionId);
+                const descInput = document.getElementById(descId);
+                
+                captionInput.addEventListener('input', function() {
+                    const imgSrc = document.getElementById(previewId).src;
+                    saveProject(index, imgSrc, captionInput.value, descInput.value);
+                });
+                
+                descInput.addEventListener('input', function() {
+                    const imgSrc = document.getElementById(previewId).src;
+                    saveProject(index, imgSrc, captionInput.value, descInput.value);
+                });
+            }
+
+            // Initialize project handlers
+            handleFileSelect(
+                document.getElementById('file-1'),
+                'project-img-1',
+                'caption-1',
+                'desc-1',
+                1,
+                'container-1'
+            );
+            handleFileSelect(
+                document.getElementById('file-2'),
+                'project-img-2',
+                'caption-2',
+                'desc-2',
+                2,
+                'container-2'
+            );
+            handleFileSelect(
+                document.getElementById('file-3'),
+                'project-img-3',
+                'caption-3',
+                'desc-3',
+                3,
+                'container-3'
+            );
+
+            // Load saved projects on page load
+            loadProjects();
+
+        });
+    </script>
+</body>
+</html>
