@@ -114,9 +114,15 @@
             text-align: center;
             color: var(--light-text);
         }
+/* make this work!!!!*/
+        .projects {
+            padding: 5em;
+        }
+/* till here */
         .projects, .education, .skills, .contact {
             padding: 2rem 0;
         }
+
         .projects h2, .education h2, .skills h2, .contact h2 {
             font-family: 'Homemade Apple', cursive;
             color: var(--secondary-color);
@@ -216,6 +222,9 @@
         nav ul li a:hover {
             color: var(--secondary-color);
         }
+        .projects {
+            padding: 5em;
+        }
     </style>
 </head>
 <body>
@@ -225,7 +234,7 @@
                 <nav>
                     <ul>
                         <li><a href="./ui.html">UI Designer</a></li>
-                        <li><a href="#ML">ML</a></li>
+                        <li><a href="./ml_proj.html">ML</a></li>
                         <li><a href="#Hobbies">Hobbies</a></li>
                         <li><a href="#blog">Blog</a></li>
                     </ul>
@@ -246,7 +255,7 @@
                 </p>
             </section>
 
-            <section id="projects" class="projects py-12" style="padding-top: 5rem;">
+            <section id="projects" class="projects py-12" style="padding-top: 5rem; padding: 5em;"></section>
                 <h2>Projects</h2>
                 <p class="text-center text-gray-600 mb-8">Explore my latest work in web development and UI/UX design.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
