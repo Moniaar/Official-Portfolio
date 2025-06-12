@@ -114,11 +114,6 @@
             text-align: center;
             color: var(--light-text);
         }
-/* make this work!!!!*/
-        .projects {
-            padding: 5em;
-        }
-/* till here */
         .projects, .education, .skills, .contact {
             padding: 2rem 0;
         }
@@ -222,9 +217,6 @@
         nav ul li a:hover {
             color: var(--secondary-color);
         }
-        .projects {
-            padding: 5em;
-        }
     </style>
 </head>
 <body>
@@ -255,7 +247,7 @@
                 </p>
             </section>
 
-            <section id="projects" class="projects py-12" style="padding-top: 5rem; padding: 5em;"></section>
+            <section id="projects" class="projects py-12">
                 <h2>Projects</h2>
                 <p class="text-center text-gray-600 mb-8">Explore my latest work in web development and UI/UX design.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -364,7 +356,7 @@
             <section id="contact" class="contact py-12">
                 <h2>Contact Me</h2>
                 <div class="arch_contact_us_duplicate">
-                    <div class="responsive-container-block big-container">
+                    <div class="responsive-container-block bigrinos big-container">
                         <div class="responsive-container-block container">
                             <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
                                 <p class="text-blk section-head">
@@ -567,7 +559,7 @@
                     caption: caption,
                     description: description
                 };
-                localStorage.setItem(`project-${index}`, JSON.stringify(projectData));
+                localStorage.setItem(`project-${i}`, JSON.stringify(projectData));
             }
 
             // Handle file selection and preview for projects
