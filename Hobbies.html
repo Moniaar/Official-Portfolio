@@ -25,24 +25,36 @@
         .font-poppins {
             font-family: 'Poppins', sans-serif;
         }
+        nav {
+            font-family: 'Caveat', cursive;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 50;
+            padding: 1rem 2rem;
+            background-color: #FDFBF7;
+        }
         .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
         }
         nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            display: flex;
+            gap: 1.5rem;
         }
-        nav a {
-            text-decoration: none;
-            color: #2f251b;
-            font-weight: 600;
-            transition: color 0.3s;
+        nav ul li a {
+            color: var(--text-color);
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
         }
-        nav a:hover {
-            color: #8B6B4C;
+        nav ul li a:hover {
+            color: var(--secondary-color);
         }
         .container {
             max-width: 1200px;
@@ -57,11 +69,12 @@
             font-size: 2.5rem;
             font-weight: 600;
             text-align: center;
-            color: #2D3748;
+            color: #8B6B4C;
             margin-bottom: 1rem;
+            font-family: 'Homemade Apple', cursive;
         }
         .hobby-card {
-            background: #FFFFFF;
+            background: #f0ede7;
             border-radius: 8px;
             padding: 2rem;
             margin-bottom: 2rem;
@@ -71,7 +84,8 @@
         .hobby-card h3 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #2D3748;
+            font-family: 'Homemade Apple', cursive;
+            color: #8B6B4C;
         }
         .hobby-card p {
             color: #4A5568;
@@ -93,17 +107,14 @@
 <body class="font-poppins text-secondary">
     <div class="min-h-screen flex flex-col">
         <header>
-            <div class="nav-container">
+            <div class="nav">
                 <nav>
                     <ul style="display: flex; justify-content: space-between; width: 100%;">
-                        <li><a href="./index.html" style="flex: auto; text-align: left;">Omnia Ahmed</a></li>
-                        <div style="display: flex; gap: 1.5rem;">
-                            <li><a href="./ui.html">UI Designer</a></li>
-                            <li><a href="./ml_proj.html">ML</a></li>
-                            <li><a href="./certificates.html">Certificates</a></li>
-                            <li><a href="./Hobbies.html">Hobbies</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                        </div>
+                    <li><a href="./index.html" style="flex: auto; text-align: left;">Home</a></li>
+                    <div style="display: flex; gap: 1.5rem;">
+                    <li><a href="./ui.html">UI Designer</a></li>
+                    <li><a href="./ml_proj.html">ML</a></li>
+                    <li><a href="./certificates.html">Certificates</a></li>                    </div>
                     </ul>
                 </nav>
             </div>
