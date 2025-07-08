@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies - Omnia Ahmed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #FDFBF7 0%, #F5F3EE 50%, #EDEBE4 100%);
+        }
+        .text-secondary {
+            color: #2D3748;
+        }
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #2D3748;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4A5568;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .hobbies {
+            padding-top: 5rem;
+            padding-bottom: 3rem;
+        }
+        .hobbies h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: #2D3748;
+            margin-bottom: 1rem;
+        }
+        .hobby-card {
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .hobby-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2D3748;
+        }
+        .hobby-card p {
+            color: #4A5568;
+            margin-top: 0.5rem;
+        }
+        .hobby-card:hover {
+            cursor: pointer;
+        }
+        hr {
+            border: none;
+            height: 30px;
+        }
+        footer {
+            background: #FFFFFF;
+            border-top: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="font-poppins text-secondary">
+    <div class="min-h-screen flex flex-col">
+        <header>
+            <div class="nav-container">
+                <nav>
+                    <ul style="display: flex; justify-content: space-between; width: 100%;">
+                        <li><a href="./index.html" style="flex: auto; text-align: left;">Omnia Ahmed</a></li>
+                        <div style="display: flex; gap: 1.5rem;">
+                            <li><a href="./ui.html">UI Designer</a></li>
+                            <li><a href="./ml_proj.html">ML</a></li>
+                            <li><a href="./certificates.html">Certificates</a></li>
+                            <li><a href="./Hobbies.html">Hobbies</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="hobbies">
+            <h2>My Hobbies</h2>
+            <p class="text-center text-gray-600 mb-8">Explore the activities I love to spend my time on :)</p>
+            <div class="container">
+                <div class="hobby-card" id="writing-card">
+                    <h3>Writing</h3>
+                    <p>I enjoy crafting stories, poems, and technical articles. Writing helps me express my thoughts and connect with others through words.</p>
+                </div>
+                <hr>
+                <div class="hobby-card" id="reading-card">
+                    <h3>Reading</h3>
+                    <p>Diving into books, from fiction to technical literature, broadens my perspective and fuels my curiosity.</p>
+                </div>
+                <hr>
+                <div class="hobby-card" id="drawing-card">
+                    <h3>Drawing</h3>
+                    <p>Sketching and illustrating allow me to bring my imagination to life, capturing moments and ideas visually.</p>
+                </div>
+                <hr>
+                <div class="hobby-card" id="designing-card">
+                    <h3>Designing</h3>
+                    <p>Creating user interfaces and graphic designs is my passion, blending aesthetics with functionality.</p>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-white py-8 border-t border-gray-100">
+            <div class="container mx-auto px-4 md:px-8 text-center">
+                <p class="text-gray-600 text-sm">© 2025 Omnia Ahmed. All rights reserved.</p>
+                <p class="text-gray-500 text-xs mt-2">Thank you for taking from your valuable time to be here!</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.querySelectorAll('.hobby-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    duration: 0.3,
+                    scale: 1.05,
+                    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
+                    ease: "power2.out"
+                });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    duration: 0.3,
+                    scale: 1,
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
