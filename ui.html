@@ -16,6 +16,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #FDFBF7;
+            padding: 35px;
         }
         .image-container {
             position: relative;
@@ -215,10 +216,13 @@
         nav ul li a:hover {
             color: var(--secondary-color);
         }
+        footer {
+            margin-top: 24em;
+        }
     </style>
 </head>
 
-<body class="bg-primary text-secondary font-poppins">
+<body class="bg-primary text-secondary font-poppins flex flex-col min-h-screen">
     <div class="min-h-screen flex flex-col">
         <header>
             <div class="nav-container">
@@ -241,18 +245,6 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project 1 -->
                     <div class="flex flex-col">
-                        <div class="image-container wood-bg aspect-square rounded relative" id="container-1">
-                            <img id="project-img-1" class="project-image" src="images/pomtom.png" alt="Project 1">
-                            <div class="image-overlay rounded"></div>
-                        </div>
-                        <div class="mt-4 px-2 text-center">
-                            <h3 class="text-lg font-semibold text-secondary font-homemade">Pomodoro timer</h3>
-                            <p class="text-gray-700 font-poppins text-sm mt-2">A simple Android timer using React Native where you can foucs using the Pomodoro technique</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="flex flex-col">
                         <div class="image-container wood-bg aspect-square rounded relative" id="container-2">
                             <img id="project-img-2" class="project-image" src="images/pomtom_v2.png" alt="Project 2">
                             <div class="image-overlay rounded"></div>
@@ -260,6 +252,18 @@
                         <div class="mt-4 px-2 text-center">
                             <h3 class="text-lg font-semibold text-secondary font-homemade">Pomtom</h3>
                             <p class="text-gray-700 font-poppins text-sm mt-2">A Flutter app timer where you can foucs and ask AI as a study companion at the same time as a study buddy, powered by Gemini!</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="flex flex-col">
+                        <div class="image-container wood-bg aspect-square rounded relative" id="container-1">
+                            <img id="project-img-1" class="project-image" src="images/pomtom.png" alt="Project 1">
+                            <div class="image-overlay rounded"></div>
+                        </div>
+                        <div class="mt-4 px-2 text-center">
+                            <h3 class="text-lg font-semibold text-secondary font-homemade">Pomodoro timer</h3>
+                            <p class="text-gray-700 font-poppins text-sm mt-2">A simple Android timer using React Native where you can foucs using the Pomodoro technique</p>
                         </div>
                     </div>
             
