@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Homemade+Apple&family=Caveat:wght@500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="./contact.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=toggle_off" />
     <style>
         body {
@@ -89,21 +88,18 @@
             --text-color: #4B3621;
             --light-text: #7D6E5D;
         }
-        .min-h-screen {
-            min-height: 100vh;
-        }
         .banner {
             text-align: center;
             margin: 2rem 0;
         }
         .name_banner, .name_banner2 {
             font-family: 'Homemade Apple', cursive;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
             color: var(--secondary-color);
         }
         .job {
             font-family: 'Caveat', cursive;
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 3vw, 1.5rem);
             color: var(--text-color);
             margin-top: 0.5rem;
         }
@@ -112,15 +108,17 @@
             margin: 1rem auto;
             text-align: center;
             color: var(--light-text);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         .projects, .education, .skills, .contact {
-            padding: 2rem 0;
+            padding: 2rem 1rem;
         }
         .projects h2, .education h2, .skills h2, .contact h2 {
             font-family: 'Homemade Apple', cursive;
             color: var(--secondary-color);
             text-align: center;
             margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
         }
         .contact_button {
             background-color: var(--secondary-color);
@@ -131,6 +129,7 @@
             cursor: pointer;
             display: block;
             margin: 1rem auto;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         .contact input {
             display: block;
@@ -140,12 +139,14 @@
             padding: 0.5rem;
             border: 1px solid #E6D5AC;
             border-radius: 4px;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         .education-card {
             background-color: #fff;
             padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
         }
         .skills-image-container {
             position: relative;
@@ -167,7 +168,7 @@
             bottom: 10%;
             color: white;
             font-family: 'Caveat', cursive;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 3vw, 1.25rem);
             text-align: left;
             white-space: pre-wrap;
             overflow: auto;
@@ -180,7 +181,7 @@
             border: none;
             color: #4c4040;
             font-family: 'Caveat', cursive;
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 3vw, 1.25rem);
             resize: none;
             outline: none;
         }
@@ -193,7 +194,7 @@
             right: 0;
             width: 100%;
             z-index: 50;
-            padding: 1rem 2rem;
+            padding: 1rem 1rem;
             background-color: #FDFBF7;
         }
         .nav-container {
@@ -205,11 +206,13 @@
         }
         nav ul {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
         nav ul li a {
             color: var(--text-color);
-            font-size: 1.25rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.25rem);
             transition: color 0.3s ease;
         }
         nav ul li a:hover {
@@ -218,50 +221,168 @@
         footer {
             background: #FFFFFF;
             border-top: 1px solid #E2E8F0;
-            margin-top: 24em;
-            padding: 10px;
+            padding: 1rem;
+            margin: 0;
+        }
+        .contact {
+            background-color: #FDFBF7;
+        }
+        .contact h2 {
+            font-family: 'Homemade Apple', cursive;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+        .text-blk.section-head {
+            font-family: 'Caveat', cursive;
+            color: var(--text-color);
+            font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+            text-align: center;
+        }
+        .text-blk.section-subhead {
+            font-family: 'Poppins', sans-serif;
+            color: var(--light-text);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-wrapper {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .input-element {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid var(--primary-color);
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+        .input-element:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+        .textinput.input-element {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            margin: 1rem auto;
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #6F553A;
+        }
+        .social-media-icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .social-icon svg {
+            fill: var(--secondary-color);
+            transition: fill 0.3s ease;
+            width: 24px;
+            height: 24px;
+        }
+        .social-icon:hover svg {
+            fill: var(--primary-color);
+        }
+        #form-message {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+        }
+        #form-message.success {
+            color: #2e7d32;
+        }
+        #form-message.error {
+            color: #d32f2f;
         }
     </style>
 </head>
 
 <body class="bg-primary text-secondary font-poppins">
-    <div class="min-h-screen flex flex-col">
+    <div class="flex flex-col min-h-screen">
         <header>
             <div class="nav-container">
-            <nav>
-                <ul style="display: flex; justify-content: space-between; width: 100%;">
-                <li><a href="./index.html" style="flex: auto; text-align: left;">Omnia Ahmed</a></li>
-                <div style="display: flex; gap: 1.5rem;">
-                    <li><a href="./experince.html">Experinces</a></li>
-                    <li><a href="./ml_proj.html">ML</a></li>
-                    <li><a href="./certificates.html">Certificates</a></li>
-                    <li><a href="./Hobbies.html">Hobbies</a></li>
-                </div>
-                </ul>
-            </nav>
+                <nav>
+                    <ul class="flex flex-col sm:flex-row gap-4 justify-end">
+                        <li><a href="./index.html">Omnia Ahmed</a></li>
+                        <li><a href="./experince.html">Experiences</a></li>
+                        <li><a href="./ml_proj.html">ML</a></li>
+                        <li><a href="./certificates.html">Certificates</a></li>
+                        <li><a href="./Hobbies.html">Hobbies</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
+        <main class="flex-grow">
             <section id="projects" class="projects py-12" style="padding-top: 5rem;">
-                <h2>Previous experinces</h2>
+                <h2>Previous Experiences</h2>
                 <p class="text-center text-gray-600 mb-8">Programming and Translating</p>
                 <section id="education" class="education py-12">
-                <div class="max-w-2xl mx-auto">
-                    <div class="education-card">
-                        <h3 class="text-lg font-semibold text-secondary">Translator</h3>
-                        <p class="text-gray-600 mt-2">OdreamTeam - Korean to either Arabic or English</p>
-                        <p class="text-gray-500 text-sm mt-1">Remote, Saudi Arabia | 2021 - 2023</p>
+                    <div class="max-w-2xl mx-auto px-4">
+                        <div class="education-card">
+                            <h3 class="text-lg font-semibold text-secondary">Translator</h3>
+                            <p class="text-gray-600 mt-2">OdreamTeam - Korean to either Arabic or English</p>
+                            <p class="text-gray-500 text-sm mt-1">Remote, Saudi Arabia | 2021 - 2023</p>
+                        </div>
+                        <hr class="my-8">
+                        <div class="education-card">
+                            <h3 class="text-lg font-semibold text-secondary">Full Stack Developer</h3>
+                            <p class="text-gray-600 mt-2">Freelancer</p>
+                            <p class="text-gray-500 text-sm mt-1">Remote | 2024 - present</p>
+                        </div>
                     </div>
-                    <!-- I am sorry but this line 359 is my fav line in this whole project XD -->
-                    <hr style="height:30px">
-                    <div class="education-card">
-                        <h3 class="text-lg font-semibold text-secondary">Full Stack developer</h3>
-                        <p class="text-gray-600 mt-2">Freelancer</p>
-                        <p class="text-gray-500 text-sm mt-1">Remote | 2024 - present</p>
+                </section>
+            </section>
+            <section id="contact" class="contact py-12">
+                <h2>Contact Me</h2>
+                    <div class="responsive-container-block bigrinos big-container">
+                            <div class="responsive-cell-block wk-mobile-12 wk-desk-5 wk-tab-10 wk-ipadp-5" id="ih6s">
+                                <p class="text-blk section-head">
+                                    Let us get in touch!
+                                </p>
+                                <br/>
+                                <p class="text-blk section-subhead">
+                                    Here is all my social media where you can reach out and know more about me :)
+                                </p>
+                            </div>
+                                <div class="social-media-icon-container flex justify-center gap-4 mt-4">
+                                    <a href="https://instagram.com/Moniaar_" target="_blank" class="icon-block social-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 2.695.272.273 2.69.073 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://twitter.com/moniaar_" target="_blank" class="icon-block social-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.708 1.051 3.216 2.65 4.104-.976-.031-1.896-.301-2.697-.747v.075c0 2.385 1.846 4.374 4.294 4.826-.449.123-.917.234-1.405.234-.343 0-.677-.033-.998-.1.675 2.108 2.641 3.641 4.966 3.683-1.82 1.426-4.114 2.274-6.607 2.274-.429 0-.853-.025-1.269-.075 2.361 1.513 5.164 2.396 8.177 2.396 9.812 0 15.176-8.128 15.176-15.177 0-.231-.005-.461-.015-.69 1.043-.75 1.948-1.691 2.663-2.761z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="icon-block social-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
-            </section>
-            <style>
+                <style>
                     .contact {
                         background-color: #FDFBF7;
                     }
@@ -381,6 +502,7 @@
                     });
                 </script>
             </section>
+        </main>
 
         <footer class="bg-white py-8 border-t border-gray-100">
             <div class="container mx-auto px-4 md:px-8 text-center">
@@ -421,7 +543,7 @@
                     caption: caption,
                     description: description
                 };
-                localStorage.setItem(`project-${index}`, JSON.stringify(projectData));
+                localStorage.setItem(`project-${i}`, JSON.stringify(projectData));
             }
 
             // Handle file selection and preview for projects
@@ -458,35 +580,6 @@
                     saveProject(index, imgSrc, captionInput.value, descInput.value);
                 });
             }
-
-            // Initialize project handlers
-            handleFileSelect(
-                document.getElementById('file-1'),
-                'project-img-1',
-                'caption-1',
-                'desc-1',
-                1,
-                'container-1'
-            );
-            handleFileSelect(
-                document.getElementById('file-2'),
-                'project-img-2',
-                'caption-2',
-                'desc-2',
-                2,
-                'container-2'
-            );
-            handleFileSelect(
-                document.getElementById('file-3'),
-                'project-img-3',
-                'caption-3',
-                'desc-3',
-                3,
-                'container-3'
-            );
-
-            // Load saved projects on page load
-            loadProjects();
 
         });
     </script>
