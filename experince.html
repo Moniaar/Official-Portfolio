@@ -16,7 +16,6 @@
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #FDFBF7;
-            padding: 35px;
         }
         .image-container {
             position: relative;
@@ -217,12 +216,15 @@
             color: var(--secondary-color);
         }
         footer {
+            background: #FFFFFF;
+            border-top: 1px solid #E2E8F0;
             margin-top: 24em;
+            padding: 10px;
         }
     </style>
 </head>
 
-<body class="bg-primary text-secondary font-poppins flex flex-col min-h-screen">
+<body class="bg-primary text-secondary font-poppins">
     <div class="min-h-screen flex flex-col">
         <header>
             <div class="nav-container">
@@ -240,45 +242,24 @@
             </div>
         </header>
             <section id="projects" class="projects py-12" style="padding-top: 5rem;">
-                <h2>Projects</h2>
-                <p class="text-center text-gray-600 mb-8">Explore my latest work in web development and UI/UX design.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="flex flex-col">
-                        <div class="image-container wood-bg aspect-square rounded relative" id="container-2">
-                            <img id="project-img-2" class="project-image" src="images/pomtom_v2.png" alt="Project 2">
-                            <div class="image-overlay rounded"></div>
-                        </div>
-                        <div class="mt-4 px-2 text-center">
-                            <h3 class="text-lg font-semibold text-secondary font-homemade">Pomtom</h3>
-                            <p class="text-gray-700 font-poppins text-sm mt-2">A Flutter app timer where you can foucs and ask AI as a study companion at the same time as a study buddy, powered by Gemini!</p>
-                        </div>
+                <h2>Previous experinces</h2>
+                <p class="text-center text-gray-600 mb-8">Programming and Translating</p>
+                <section id="education" class="education py-12">
+                <div class="max-w-2xl mx-auto">
+                    <div class="education-card">
+                        <h3 class="text-lg font-semibold text-secondary">Translator</h3>
+                        <p class="text-gray-600 mt-2">OdreamTeam - Korean to either Arabic or English</p>
+                        <p class="text-gray-500 text-sm mt-1">Remote, Saudi Arabia | 2021 - 2023</p>
                     </div>
-
-                    <!-- Project 2 -->
-                    <div class="flex flex-col">
-                        <div class="image-container wood-bg aspect-square rounded relative" id="container-1">
-                            <img id="project-img-1" class="project-image" src="images/pomtom.png" alt="Project 1">
-                            <div class="image-overlay rounded"></div>
-                        </div>
-                        <div class="mt-4 px-2 text-center">
-                            <h3 class="text-lg font-semibold text-secondary font-homemade">Pomodoro timer</h3>
-                            <p class="text-gray-700 font-poppins text-sm mt-2">A simple Android timer using React Native where you can foucs using the Pomodoro technique</p>
-                        </div>
-                    </div>
-            
-                    <!-- Project 3 -->
-                    <div class="flex flex-col">
-                        <div class="image-container wood-bg aspect-square rounded relative" id="container-3">
-                            <img id="project-img-3" class="project-image" src="images/calcify.png" alt="Project 3">
-                            <div class="image-overlay rounded"></div>
-                        </div>
-                        <div class="mt-4 px-2 text-center">
-                            <h3 class="text-lg font-semibold text-secondary font-homemade">Calcify</h3>
-                            <p class="text-gray-700 font-poppins text-sm mt-2">A desktop app using Electron.js and Sqilte3 where you can fully manage and generate your clients invoices.</p>
-                        </div>
+                    <!-- I am sorry but this line 359 is my fav line in this whole project XD -->
+                    <hr style="height:30px">
+                    <div class="education-card">
+                        <h3 class="text-lg font-semibold text-secondary">Full Stack developer</h3>
+                        <p class="text-gray-600 mt-2">Freelancer</p>
+                        <p class="text-gray-500 text-sm mt-1">Remote | 2024 - present</p>
                     </div>
                 </div>
+            </section>
             </section>
             <style>
                     .contact {
@@ -400,7 +381,6 @@
                     });
                 </script>
             </section>
-        </main>
 
         <footer class="bg-white py-8 border-t border-gray-100">
             <div class="container mx-auto px-4 md:px-8 text-center">
