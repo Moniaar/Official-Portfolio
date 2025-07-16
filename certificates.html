@@ -177,7 +177,7 @@
             width: 100%;
             height: 100%;
             background: transparent;
-            border: none;
+-grad            border: none;
             color: #4c4040;
             font-family: 'Caveat', cursive;
             font-size: 1.25rem;
@@ -193,7 +193,6 @@
             right: 0;
             width: 100%;
             z-index: 50;
-            padding: 1rem 2rem;
             background-color: #FDFBF7;
         }
         .nav-container {
@@ -205,11 +204,13 @@
         }
         nav ul {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
         }
         nav ul li a {
             color: var(--text-color);
-            font-size: 1.25rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.25rem);
             transition: color 0.3s ease;
         }
         nav ul li a:hover {
@@ -239,153 +240,153 @@
                 </nav>
             </div>
         </header>
+        <main class="flex-grow">
             <section id="projects" class="projects py-12" style="padding-top: 5rem;">
                 <h2>Certificates and Achievments</h2>
                 <p class="text-center text-gray-600 mb-8">Offical Eductional journey</p>
                 <section id="education" class="education py-12">
-                <h2>Education</h2>
-                <div class="max-w-2xl mx-auto">
-                    <div class="education-card">
-                        <h3 class="text-lg font-semibold text-secondary">Bachelor of Science in Computer Science</h3>
-                        <p class="text-gray-600 mt-2">Sudan University of Science and Technology (SUST)</p>
-                        <p class="text-gray-500 text-sm mt-1">Khartoum, Sudan | 2018 - 2026</p>
+                    <h2>Education</h2>
+                    <div class="max-w-2xl mx-auto">
+                        <div class="education-card">
+                            <h3 class="text-lg font-semibold text-secondary">Bachelor of Science in Computer Science</h3>
+                            <p class="text-gray-600 mt-2">Sudan University of Science and Technology (SUST)</p>
+                            <p class="text-gray-500 text-sm mt-1">Khartoum, Sudan | 2018 - 2026</p>
+                        </div>
+                        <!-- I am sorry but this line 359 is my fav line in this whole project XD -->
+                        <hr style="height:30px">
+                        <div class="education-card">
+                            <h3 class="text-lg font-semibold text-secondary">Associate of Business degree</h3>
+                            <p class="text-gray-600 mt-2">University of the People (UoP)</p>
+                            <p class="text-gray-500 text-sm mt-1">USA, Remote | 2023 - 2026</p>
+                        </div>
+                        <hr style="height:30px">
+                        <div class="education-card">
+                            <h3 class="text-lg font-semibold text-secondary">ALX SE program</h3>
+                            <p class="text-gray-600 mt-2">ALX Africa</p>
+                            <p class="text-gray-500 text-sm mt-1">Egypt, Remote | 2023 - 2024</p>
+                        </div>
                     </div>
-                    <!-- I am sorry but this line 359 is my fav line in this whole project XD -->
-                    <hr style="height:30px">
-                    <div class="education-card">
-                        <h3 class="text-lg font-semibold text-secondary">Associate of Business degree</h3>
-                        <p class="text-gray-600 mt-2">University of the People (UoP)</p>
-                        <p class="text-gray-500 text-sm mt-1">USA, Remote | 2023 - 2026</p>
-                    </div>
-                    <hr style="height:30px">
-                    <div class="education-card">
-                        <h3 class="text-lg font-semibold text-secondary">ALX SE program</h3>
-                        <p class="text-gray-600 mt-2">ALX Africa</p>
-                        <p class="text-gray-500 text-sm mt-1">Egypt, Remote | 2023 - 2024</p>
-                    </div>
-                </div>
-            </section>
+                </section>
             </section>
             <style>
-                    .contact {
-                        background-color: #FDFBF7;
-                    }
-                    .contact h2 {
-                        font-family: 'Homemade Apple', cursive;
-                        color: var(--secondary-color, #8B6B4C);
-                        text-align: center;
-                        margin-bottom: 1rem;
-                        font-size: 2rem;
-                    }
-                    .text-blk.section-head {
-                        font-family: 'Caveat', cursive;
-                        color: var(--text-color, #4B3621);
-                        font-size: 1.75rem;
-                        text-align: center;
-                    }
-                    .text-blk.section-subhead {
-                        font-family: 'Poppins', sans-serif;
-                        color: var(--light-text, #7D6E5D);
-                        font-size: 1rem;
-                        text-align: center;
-                        max-width: 500px;
-                        margin: 0 auto;
-                    }
-                    .form-wrapper {
-                        max-width: 400px;
-                        margin: 0 auto;
-                    }
-                    .input-element {
-                        width: 100%;
-                        padding: 0.75rem;
-                        margin: 0.5rem 0;
-                        border: 1px solid var(--primary-color, #E6D5AC);
-                        border-radius: 4px;
-                        font-family: 'Poppins', sans-serif;
-                        font-size: 1rem;
-                        background-color: #fff;
-                        transition: border-color 0.3s ease;
-                    }
-                    .input-element:focus {
-                        border-color: var(--secondary-color, #8B6B4C);
-                        outline: none;
-                    }
-                    .textinput.input-element {
-                        min-height: 100px;
-                        resize: vertical;
-                    }
-                    .button {
-                        background-color: var(--secondary-color, #8B6B4C);
-                        color: white;
-                        padding: 0.75rem 1.5rem;
-                        border: none;
-                        border-radius: 8px;
-                        cursor: pointer;
-                        display: block;
-                        margin: 1rem auto;
-                        font-family: 'Poppins', sans-serif;
-                        font-size: 1rem;
-                        transition: background-color 0.3s ease;
-                    }
-                    .button:hover {
-                        background-color: #6F553A;
-                    }
-                    .social-media-icon-container {
-                        display: flex;
-                        justify-content: center;
-                        gap: 1rem;
-                    }
-                    .social-icon svg {
-                        fill: var(--secondary-color, #8B6B4C);
-                        transition: fill 0.3s ease;
-                        width: 24px;
-                        height: 24px;
-                    }
-                    .social-icon:hover svg {
-                        fill: var(--primary-color, #E6D5AC);
-                    }
-                    #form-message {
-                        font-family: 'Poppins', sans-serif;
-                        color: var(--text-color, #4B3621);
-                    }
-                    #form-message.success {
-                        color: #2e7d32;
-                    }
-                    #form-message.error {
-                        color: #d32f2f;
-                    }
-                </style>
-                <script>
-                    document.getElementById('contact-form').addEventListener('submit', async function (e) {
-                        e.preventDefault();
-                        const form = e.target;
-                        const messageDiv = document.getElementById('form-message');
-                        messageDiv.classList.remove('success', 'error', 'hidden');
-                        messageDiv.textContent = 'Sending...';
-            
-                        try {
-                            const response = await fetch(form.action, {
-                                method: 'POST',
-                                body: new FormData(form),
-                                headers: {
-                                    'Accept': 'application/json'
-                                }
-                            });
-            
-                            if (response.ok) {
-                                messageDiv.textContent = 'Message sent successfully!';
-                                messageDiv.classList.add('success');
-                                form.reset();
-                            } else {
-                                throw new Error('Failed to send message');
+                .contact {
+                    background-color: #FDFBF7;
+                }
+                .contact h2 {
+                    font-family: 'Homemade Apple', cursive;
+                    color: var(--secondary-color, #8B6B4C);
+                    text-align: center;
+                    margin-bottom: 1rem;
+                    font-size: 2rem;
+                }
+                .text-blk.section-head {
+                    font-family: 'Caveat', cursive;
+                    color: var(--text-color, #4B3621);
+                    font-size: 1.75rem;
+                    text-align: center;
+                }
+                .text-blk.section-subhead {
+                    font-family: 'Poppins', sans-serif;
+                    color: var(--light-text, #7D6E5D);
+                    font-size: 1rem;
+                    text-align: center;
+                    max-width: 500px;
+                    margin: 0 auto;
+                }
+                .form-wrapper {
+                    max-width: 400px;
+                    margin: 0 auto;
+                }
+                .input-element {
+                    width: 100%;
+                    padding: 0.75rem;
+                    margin: 0.5rem 0;
+                    border: 1px solid var(--primary-color, #E6D5AC);
+                    border-radius: 4px;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    transition: border-color 0.3s ease;
+                }
+                .input-element:focus {
+                    border-color: var(--secondary-color, #8B6B4C);
+                    outline: none;
+                }
+                .textinput.input-element {
+                    min-height: 100px;
+                    resize: vertical;
+                }
+                .button {
+                    background-color: var(--secondary-color, #8B6B4C);
+                    color: white;
+                    padding: 0.75rem 1.5rem;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    display: block;
+                    margin: 1rem auto;
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1rem;
+                    transition: background-color 0.3s ease;
+                }
+                .button:hover {
+                    background-color: #6F553A;
+                }
+                .social-media-icon-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+                .social-icon svg {
+                    fill: var(--secondary-color, #8B6B4C);
+                    transition: fill 0.3s ease;
+                    width: 24px;
+                    height: 24px;
+                }
+                .social-icon:hover svg {
+                    fill: var(--primary-color, #E6D5AC);
+                }
+                #form-message {
+                    font-family: 'Poppins', sans-serif;
+                    color: var(--text-color, #4B3621);
+                }
+                #form-message.success {
+                    color: #2e7d32;
+                }
+                #form-message.error {
+                    color: #d32f2f;
+                }
+            </style>
+            <script>
+                document.getElementById('contact-form').addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const messageDiv = document.getElementById('form-message');
+                    messageDiv.classList.remove('success', 'error', 'hidden');
+                    messageDiv.textContent = 'Sending...';
+        
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
                             }
-                        } catch (error) {
-                            messageDiv.textContent = 'Error sending message. Please try again.';
-                            messageDiv.classList.add('error');
+                        });
+        
+                        if (response.ok) {
+                            messageDiv.textContent = 'Message sent successfully!';
+                            messageDiv.classList.add('success');
+                            form.reset();
+                        } else {
+                            throw new Error('Failed to send message');
                         }
-                    });
-                </script>
-            </section>
+                    } catch (error) {
+                        messageDiv.textContent = 'Error sending message. Please try again.';
+                        messageDiv.classList.add('error');
+                    }
+                });
+            </script>
         </main>
         <footer class="bg-white py-8 border-t border-gray-100">
             <div class="container mx-auto px-4 md:px-8 text-center">
