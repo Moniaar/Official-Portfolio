@@ -1,7 +1,7 @@
 
 # Official Portfolio
 
-This is a minimalistic portfolio to showcase my projects, built using **HTML**, **CSS**, and **vanilla JavaScript**. The portfolio is designed to be clean, responsive, and easy to customize, allowing visitors to learn more about my work and skills.
+This is a minimalistic portfolio to showcase my projects, built using **HTML**, **CSS**, and **Tailwind**. The portfolio is designed to be clean, responsive, and easy to customize, allowing visitors to learn more about my work and skills.
 
 ## Table of Contents
 
@@ -25,7 +25,6 @@ This is a minimalistic portfolio to showcase my projects, built using **HTML**, 
 - **Responsive Layout:** Works seamlessly on desktops, tablets, and mobile devices.
 - **Project Showcase:** Highlight your best projects with descriptions and links.
 - **About Section:** Brief introduction and contact information.
-- **Vanilla JavaScript:** No frameworks or dependencies for fast loading.
 - **Easy Customization:** Simple structure for quick updates.
 
 ---
