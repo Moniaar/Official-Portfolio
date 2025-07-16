@@ -259,6 +259,12 @@
                         <p class="text-gray-600 mt-2">University of the People (UoP)</p>
                         <p class="text-gray-500 text-sm mt-1">USA, Remote | 2023 - 2026</p>
                     </div>
+                    <hr style="height:30px">
+                    <div class="education-card">
+                        <h3 class="text-lg font-semibold text-secondary">ALX SE program</h3>
+                        <p class="text-gray-600 mt-2">ALX Africa</p>
+                        <p class="text-gray-500 text-sm mt-1">Egypt, Remote | 2023 - 2024</p>
+                    </div>
                 </div>
             </section>
             </section>
@@ -383,113 +389,12 @@
                 </script>
             </section>
 
-        <footer class="bg-white py-8 border-t border-gray-100">
+        <footer class="bg-white py-4 border-t border-gray-100">
             <div class="container mx-auto px-4 md:px-8 text-center">
                 <p class="text-gray-600 text-sm">© 2025 Omnia Ahmed. All rights reserved.</p>
                 <p class="text-gray-500 text-xs mt-2">Thank you for taking from your valuable time to be here!</p>
             </div>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load saved projects from localStorage
-            function loadProjects() {
-                for (let i = 1; i <= 3; i++) {
-                    const projectData = localStorage.getItem(`project-${i}`);
-                    if (projectData) {
-                        const { image, caption, description } = JSON.parse(projectData);
-                        const imgElement = document.getElementById(`project-img-${i}`);
-                        const captionElement = document.getElementById(`caption-${i}`);
-                        const descElement = document.getElementById(`desc-${i}`);
-                        const containerElement = document.getElementById(`container-${i}`);
-                        
-                        if (image) {
-                            imgElement.src = image;
-                            imgElement.style.display = 'block';
-                            containerElement.classList.add('has-image');
-                        }
-                        if (caption) captionElement.value = caption;
-                        if (description) descElement.value = description;
-                    }
-                }
-            }
-
-            // Save project data to localStorage
-            function saveProject(index, imageData, caption, description) {
-                const projectData = {
-                    image: imageData,
-                    caption: caption,
-                    description: description
-                };
-                localStorage.setItem(`project-${index}`, JSON.stringify(projectData));
-            }
-
-            // Handle file selection and preview for projects
-            function handleFileSelect(fileInput, previewId, captionId, descId, index, containerId) {
-                fileInput.addEventListener('change', function(e) {
-                    const file = e.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            const imgElement = document.getElementById(previewId);
-                            const containerElement = document.getElementById(containerId);
-                            imgElement.src = e.target.result;
-                            imgElement.style.display = 'block';
-                            containerElement.classList.add('has-image');
-                            
-                            const caption = document.getElementById(captionId).value;
-                            const description = document.getElementById(descId).value;
-                            saveProject(index, e.target.result, caption, description);
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-
-                const captionInput = document.getElementById(captionId);
-                const descInput = document.getElementById(descId);
-                
-                captionInput.addEventListener('input', function() {
-                    const imgSrc = document.getElementById(previewId).src;
-                    saveProject(index, imgSrc, captionInput.value, descInput.value);
-                });
-                
-                descInput.addEventListener('input', function() {
-                    const imgSrc = document.getElementById(previewId).src;
-                    saveProject(index, imgSrc, captionInput.value, descInput.value);
-                });
-            }
-
-            // Initialize project handlers
-            handleFileSelect(
-                document.getElementById('file-1'),
-                'project-img-1',
-                'caption-1',
-                'desc-1',
-                1,
-                'container-1'
-            );
-            handleFileSelect(
-                document.getElementById('file-2'),
-                'project-img-2',
-                'caption-2',
-                'desc-2',
-                2,
-                'container-2'
-            );
-            handleFileSelect(
-                document.getElementById('file-3'),
-                'project-img-3',
-                'caption-3',
-                'desc-3',
-                3,
-                'container-3'
-            );
-
-            // Load saved projects on page load
-            loadProjects();
-
-        });
-    </script>
 </body>
 </html>
