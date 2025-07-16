@@ -19,6 +19,10 @@
             background: linear-gradient(135deg, #FDFBF7 0%, #F5F3EE 50%, #EDEBE4 100%);
             font-family: 'Poppins', sans-serif;
         }
+        :root {
+            --text-color: #4B3621;
+            --secondary-color: #8B6B4C;
+        }
         .text-secondary {
             color: #8B6B4C;
         }
@@ -34,7 +38,6 @@
             right: 0;
             width: 100%;
             z-index: 50;
-            padding: 1rem 2rem;
             background-color: #FDFBF7;
         }
         .nav-container {
@@ -46,11 +49,13 @@
         }
         nav ul {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
         }
         nav ul li a {
             color: var(--text-color);
-            font-size: 1.25rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.25rem);
             transition: color 0.3s ease;
         }
         nav ul li a:hover {
@@ -105,7 +110,7 @@
             cursor: pointer;
         }
         hr {
-            border: none;
+inst            border: none;
             height: 30px;
         }
         footer {
