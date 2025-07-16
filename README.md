@@ -25,7 +25,6 @@ This is a minimalistic portfolio to showcase my projects, built using **HTML**, 
 - **Responsive Layout:** Works seamlessly on desktops, tablets, and mobile devices.
 - **Project Showcase:** Highlight your best projects with descriptions and links.
 - **About Section:** Brief introduction and contact information.
-- **Vanilla JavaScript:** No frameworks or dependencies for fast loading.
 - **Easy Customization:** Simple structure for quick updates.
 
 ---
